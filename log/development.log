@@ -1,0 +1,1531 @@
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (22.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (16.1ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateIngredients (20100116062925)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCREATE TABLE "ingredients" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100116062925')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("ingredients")[0m
+
+
+Processing IngredientsController#index (for 127.0.0.1 at 2010-01-15 20:36:46) [GET]
+  [4;36;1mIngredient Load (0.4ms)[0m   [0;1mSELECT * FROM "ingredients" [0m
+Rendering template within layouts/ingredients
+Rendering ingredients/index
+Completed in 37ms (View: 33, DB: 0) | 200 OK [http://localhost/ingredients]
+
+
+Processing IngredientsController#new (for 127.0.0.1 at 2010-01-15 20:43:47) [GET]
+Rendering template within layouts/ingredients
+Rendering ingredients/new
+Completed in 15ms (View: 10, DB: 0) | 200 OK [http://localhost/ingredients/new]
+
+
+Processing IngredientsController#create (for 127.0.0.1 at 2010-01-15 20:43:53) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"m49LwMDEGZJ0zWYGIG9ojZPbMfc7aGPx2qMfZnZNRZ0=", "ingredient"=>{"name"=>"boobs"}}
+  [4;35;1mIngredient Create (0.5ms)[0m   [0mINSERT INTO "ingredients" ("name", "created_at", "updated_at") VALUES('boobs', '2010-01-16 06:43:53', '2010-01-16 06:43:53')[0m
+Redirected to http://localhost:3001/ingredients/1
+Completed in 11ms (DB: 0) | 302 Found [http://localhost/ingredients]
+
+
+Processing IngredientsController#show (for 127.0.0.1 at 2010-01-15 20:43:53) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mIngredient Load (0.3ms)[0m   [0;1mSELECT * FROM "ingredients" WHERE ("ingredients"."id" = 1) [0m
+Rendering template within layouts/ingredients
+Rendering ingredients/show
+Completed in 14ms (View: 8, DB: 0) | 200 OK [http://localhost/ingredients/1]
+
+
+Processing IngredientsController#index (for 127.0.0.1 at 2010-01-15 20:43:56) [GET]
+  [4;35;1mIngredient Load (0.6ms)[0m   [0mSELECT * FROM "ingredients" [0m
+Rendering template within layouts/ingredients
+Rendering ingredients/index
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://localhost/ingredients]
+
+
+Processing IngredientsController#new (for 127.0.0.1 at 2010-01-15 20:44:02) [GET]
+Rendering template within layouts/ingredients
+Rendering ingredients/new
+Completed in 10ms (View: 4, DB: 0) | 200 OK [http://localhost/ingredients/new]
+
+
+Processing IngredientsController#create (for 127.0.0.1 at 2010-01-15 20:44:16) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"m49LwMDEGZJ0zWYGIG9ojZPbMfc7aGPx2qMfZnZNRZ0=", "ingredient"=>{"name"=>"sweat"}}
+  [4;36;1mIngredient Create (0.4ms)[0m   [0;1mINSERT INTO "ingredients" ("name", "created_at", "updated_at") VALUES('sweat', '2010-01-16 06:44:16', '2010-01-16 06:44:16')[0m
+Redirected to http://localhost:3001/ingredients/2
+Completed in 53ms (DB: 0) | 302 Found [http://localhost/ingredients]
+
+
+Processing IngredientsController#show (for 127.0.0.1 at 2010-01-15 20:44:16) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mIngredient Load (0.3ms)[0m   [0mSELECT * FROM "ingredients" WHERE ("ingredients"."id" = 2) [0m
+Rendering template within layouts/ingredients
+Rendering ingredients/show
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/ingredients/2]
+
+
+Processing IngredientsController#index (for 127.0.0.1 at 2010-01-15 20:44:19) [GET]
+  [4;36;1mIngredient Load (0.8ms)[0m   [0;1mSELECT * FROM "ingredients" [0m
+Rendering template within layouts/ingredients
+Rendering ingredients/index
+Completed in 16ms (View: 11, DB: 1) | 200 OK [http://localhost/ingredients]
+
+
+Processing IngredientsController#edit (for 127.0.0.1 at 2010-01-15 20:44:30) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mIngredient Load (0.3ms)[0m   [0mSELECT * FROM "ingredients" WHERE ("ingredients"."id" = 2) [0m
+Rendering template within layouts/ingredients
+Rendering ingredients/edit
+Completed in 18ms (View: 12, DB: 0) | 200 OK [http://localhost/ingredients/2/edit]
+
+
+Processing IngredientsController#update (for 127.0.0.1 at 2010-01-15 20:44:35) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"m49LwMDEGZJ0zWYGIG9ojZPbMfc7aGPx2qMfZnZNRZ0=", "id"=>"2", "ingredient"=>{"name"=>"sweaty"}}
+  [4;36;1mIngredient Load (0.4ms)[0m   [0;1mSELECT * FROM "ingredients" WHERE ("ingredients"."id" = 2) [0m
+  [4;35;1mIngredient Update (0.4ms)[0m   [0mUPDATE "ingredients" SET "updated_at" = '2010-01-16 06:44:35', "name" = 'sweaty' WHERE "id" = 2[0m
+Redirected to http://localhost:3001/ingredients/2
+Completed in 12ms (DB: 1) | 302 Found [http://localhost/ingredients/2]
+
+
+Processing IngredientsController#show (for 127.0.0.1 at 2010-01-15 20:44:35) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mIngredient Load (0.3ms)[0m   [0;1mSELECT * FROM "ingredients" WHERE ("ingredients"."id" = 2) [0m
+Rendering template within layouts/ingredients
+Rendering ingredients/show
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/ingredients/2]
+
+
+Processing IngredientsController#index (for 127.0.0.1 at 2010-01-15 20:44:37) [GET]
+  [4;35;1mIngredient Load (0.8ms)[0m   [0mSELECT * FROM "ingredients" [0m
+Rendering template within layouts/ingredients
+Rendering ingredients/index
+Completed in 16ms (View: 11, DB: 1) | 200 OK [http://localhost/ingredients]
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateIngredients (20100116062925)
+Migrating to CreateRecipes (20100116064836)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCREATE TABLE "recipes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "instructions" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "ingredients_recipes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "ingredient_id" integer, "recipe_id" integer) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100116064836')[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("ingredients")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("ingredients_recipes")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("recipes")[0m
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-01-15 20:55:04) [GET]
+  [4;36;1mRecipe Load (0.4ms)[0m   [0;1mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+Completed in 18ms (View: 13, DB: 0) | 200 OK [http://localhost/recipes]
+
+
+Processing RecipesController#new (for 127.0.0.1 at 2010-01-15 20:55:07) [GET]
+Rendering template within layouts/recipes
+Rendering recipes/new
+Completed in 15ms (View: 10, DB: 0) | 200 OK [http://localhost/recipes/new]
+
+
+Processing RecipesController#create (for 127.0.0.1 at 2010-01-15 20:55:27) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"m49LwMDEGZJ0zWYGIG9ojZPbMfc7aGPx2qMfZnZNRZ0=", "recipe"=>{"name"=>"sex", "instructions"=>"1. get naked"}}
+  [4;35;1mRecipe Create (0.4ms)[0m   [0mINSERT INTO "recipes" ("name", "created_at", "updated_at", "instructions") VALUES('sex', '2010-01-16 06:55:27', '2010-01-16 06:55:27', '1. get naked')[0m
+Redirected to http://localhost:3001/recipes/1
+Completed in 11ms (DB: 0) | 302 Found [http://localhost/recipes]
+
+
+Processing RecipesController#show (for 127.0.0.1 at 2010-01-15 20:55:27) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mRecipe Load (0.3ms)[0m   [0;1mSELECT * FROM "recipes" WHERE ("recipes"."id" = 1) [0m
+Rendering template within layouts/recipes
+Rendering recipes/show
+Completed in 87ms (View: 81, DB: 0) | 200 OK [http://localhost/recipes/1]
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-01-15 20:55:30) [GET]
+  [4;35;1mRecipe Load (0.7ms)[0m   [0mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/recipes]
+
+
+Processing RecipesController#edit (for 127.0.0.1 at 2010-01-15 20:55:37) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mRecipe Load (0.4ms)[0m   [0;1mSELECT * FROM "recipes" WHERE ("recipes"."id" = 1) [0m
+Rendering template within layouts/recipes
+Rendering recipes/edit
+Completed in 17ms (View: 11, DB: 0) | 200 OK [http://localhost/recipes/1/edit]
+
+
+Processing RecipesController#update (for 127.0.0.1 at 2010-01-15 20:55:48) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"m49LwMDEGZJ0zWYGIG9ojZPbMfc7aGPx2qMfZnZNRZ0=", "id"=>"1", "recipe"=>{"name"=>"sex", "instructions"=>"1. get naked\r\n2. add boobs"}}
+  [4;35;1mRecipe Load (0.4ms)[0m   [0mSELECT * FROM "recipes" WHERE ("recipes"."id" = 1) [0m
+  [4;36;1mRecipe Update (0.4ms)[0m   [0;1mUPDATE "recipes" SET "updated_at" = '2010-01-16 06:55:48', "instructions" = '1. get naked
+2. add boobs' WHERE "id" = 1[0m
+Redirected to http://localhost:3001/recipes/1
+Completed in 11ms (DB: 1) | 302 Found [http://localhost/recipes/1]
+
+
+Processing RecipesController#show (for 127.0.0.1 at 2010-01-15 20:55:48) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mRecipe Load (0.4ms)[0m   [0mSELECT * FROM "recipes" WHERE ("recipes"."id" = 1) [0m
+Rendering template within layouts/recipes
+Rendering recipes/show
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/recipes/1]
+
+
+Processing RecipesController#edit (for 127.0.0.1 at 2010-01-15 20:56:11) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mRecipe Load (0.4ms)[0m   [0;1mSELECT * FROM "recipes" WHERE ("recipes"."id" = 1) [0m
+Rendering template within layouts/recipes
+Rendering recipes/edit
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/recipes/1/edit]
+
+
+Processing RecipesController#update (for 127.0.0.1 at 2010-01-15 20:56:20) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"m49LwMDEGZJ0zWYGIG9ojZPbMfc7aGPx2qMfZnZNRZ0=", "id"=>"1", "recipe"=>{"name"=>"sex", "instructions"=>"1. get naked <br>\r\n2. add boobs"}}
+  [4;35;1mRecipe Load (0.4ms)[0m   [0mSELECT * FROM "recipes" WHERE ("recipes"."id" = 1) [0m
+  [4;36;1mRecipe Update (0.4ms)[0m   [0;1mUPDATE "recipes" SET "updated_at" = '2010-01-16 06:56:20', "instructions" = '1. get naked <br>
+2. add boobs' WHERE "id" = 1[0m
+Redirected to http://localhost:3001/recipes/1
+Completed in 91ms (DB: 1) | 302 Found [http://localhost/recipes/1]
+
+
+Processing RecipesController#show (for 127.0.0.1 at 2010-01-15 20:56:20) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mRecipe Load (0.5ms)[0m   [0mSELECT * FROM "recipes" WHERE ("recipes"."id" = 1) [0m
+Rendering template within layouts/recipes
+Rendering recipes/show
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/recipes/1]
+
+
+Processing RecipesController#edit (for 127.0.0.1 at 2010-01-15 20:56:24) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mRecipe Load (0.4ms)[0m   [0;1mSELECT * FROM "recipes" WHERE ("recipes"."id" = 1) [0m
+Rendering template within layouts/recipes
+Rendering recipes/edit
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/recipes/1/edit]
+
+
+Processing RecipesController#update (for 127.0.0.1 at 2010-01-15 20:58:35) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"m49LwMDEGZJ0zWYGIG9ojZPbMfc7aGPx2qMfZnZNRZ0=", "id"=>"1", "recipe"=>{"name"=>"sex", "instructions"=>"1. get naked\r\n2. add boobs"}}
+  [4;35;1mRecipe Load (0.4ms)[0m   [0mSELECT * FROM "recipes" WHERE ("recipes"."id" = 1) [0m
+  [4;36;1mRecipe Update (0.4ms)[0m   [0;1mUPDATE "recipes" SET "updated_at" = '2010-01-16 06:58:35', "instructions" = '1. get naked
+2. add boobs' WHERE "id" = 1[0m
+Redirected to http://localhost:3001/recipes/1
+Completed in 13ms (DB: 1) | 302 Found [http://localhost/recipes/1]
+
+
+Processing RecipesController#show (for 127.0.0.1 at 2010-01-15 20:58:35) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mRecipe Load (0.4ms)[0m   [0mSELECT * FROM "recipes" WHERE ("recipes"."id" = 1) [0m
+Rendering template within layouts/recipes
+Rendering recipes/show
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/recipes/1]
+
+
+Processing RecipesController#show (for 127.0.0.1 at 2010-01-15 21:05:27) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mRecipe Load (0.3ms)[0m   [0;1mSELECT * FROM "recipes" WHERE ("recipes"."id" = 1) [0m
+Rendering template within layouts/recipes
+Rendering recipes/show
+Completed in 76ms (View: 3, DB: 0) | 200 OK [http://localhost/recipes/1]
+
+
+Processing RecipesController#edit (for 127.0.0.1 at 2010-01-15 21:05:30) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mRecipe Load (0.4ms)[0m   [0mSELECT * FROM "recipes" WHERE ("recipes"."id" = 1) [0m
+Rendering template within layouts/recipes
+Rendering recipes/edit
+Completed in 13ms (View: 7, DB: 0) | 200 OK [http://localhost/recipes/1/edit]
+
+
+Processing IngredientsController#index (for 127.0.0.1 at 2010-01-15 21:05:38) [GET]
+  [4;36;1mIngredient Load (0.8ms)[0m   [0;1mSELECT * FROM "ingredients" [0m
+Rendering template within layouts/ingredients
+Rendering ingredients/index
+Completed in 63ms (View: 11, DB: 1) | 200 OK [http://localhost/ingredients]
+
+
+Processing IngredientsController#new (for 127.0.0.1 at 2010-01-15 21:05:41) [GET]
+Rendering template within layouts/ingredients
+Rendering ingredients/new
+Completed in 11ms (View: 5, DB: 0) | 200 OK [http://localhost/ingredients/new]
+
+
+Processing IngredientsController#create (for 127.0.0.1 at 2010-01-15 21:06:05) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"m49LwMDEGZJ0zWYGIG9ojZPbMfc7aGPx2qMfZnZNRZ0=", "ingredient"=>{"name"=>"tomatos"}}
+  [4;35;1mIngredient Create (0.5ms)[0m   [0mINSERT INTO "ingredients" ("name", "created_at", "updated_at") VALUES('tomatos', '2010-01-16 07:06:05', '2010-01-16 07:06:05')[0m
+Redirected to http://localhost:3001/ingredients/3
+Completed in 11ms (DB: 0) | 302 Found [http://localhost/ingredients]
+
+
+Processing IngredientsController#show (for 127.0.0.1 at 2010-01-15 21:06:05) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mIngredient Load (0.3ms)[0m   [0;1mSELECT * FROM "ingredients" WHERE ("ingredients"."id" = 3) [0m
+Rendering template within layouts/ingredients
+Rendering ingredients/show
+Completed in 10ms (View: 3, DB: 0) | 200 OK [http://localhost/ingredients/3]
+
+
+Processing IngredientsController#index (for 127.0.0.1 at 2010-01-15 21:06:08) [GET]
+  [4;35;1mIngredient Load (0.9ms)[0m   [0mSELECT * FROM "ingredients" [0m
+Rendering template within layouts/ingredients
+Rendering ingredients/index
+Completed in 20ms (View: 14, DB: 1) | 200 OK [http://localhost/ingredients]
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mRecipe Load (0.7ms)[0m   [0mSELECT * FROM "recipes" LIMIT 1[0m
+  [4;36;1mRecipe Load (0.9ms)[0m   [0;1mSELECT * FROM "recipes" LIMIT 1[0m
+  [4;35;1mIngredient Load (0.7ms)[0m   [0mSELECT * FROM "ingredients" INNER JOIN "ingredients_recipes" ON "ingredients".id = "ingredients_recipes".ingredient_id WHERE ("ingredients_recipes".recipe_id = 1 ) [0m
+  [4;36;1mRecipe Load (1.0ms)[0m   [0;1mSELECT * FROM "recipes" LIMIT 1[0m
+  [4;35;1mIngredient Load (0.7ms)[0m   [0mSELECT * FROM "ingredients" LIMIT 1[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateRecipes (20100116064836)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mDROP TABLE "recipes"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20100116064836'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("ingredients")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("ingredients_recipes")[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateIngredients (20100116062925)
+Migrating to CreateRecipes (20100116064836)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCREATE TABLE "recipes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "instructions" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSQLite3::SQLException: table "ingredients_recipes" already exists: CREATE TABLE "ingredients_recipes" ("ingredient_id" integer, "recipe_id" integer) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateIngredients (20100116062925)
+Migrating to CreateRecipes (20100116064836)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSQLite3::SQLException: table "ingredients_recipes" already exists: CREATE TABLE "ingredients_recipes" ("ingredient_id" integer, "recipe_id" integer) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateIngredients (20100116062925)
+Migrating to CreateRecipes (20100116064836)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSQLite3::SQLException: table "ingredients_recipes" already exists: CREATE TABLE "ingredients_recipes" ("ingredient_id" integer, "recipe_id" integer) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateIngredients (20100116062925)
+Migrating to CreateRecipes (20100116064836)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCREATE TABLE "recipes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "instructions" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100116064836')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("ingredients")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("ingredients_recipes")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("recipes")[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateRecipes (20100116064836)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mDROP TABLE "recipes"[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mDROP TABLE "ingredients_recipes"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20100116064836'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("ingredients")[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateIngredients (20100116062925)
+Migrating to CreateRecipes (20100116064836)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCREATE TABLE "recipes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "instructions" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "ingredients_recipes" ("ingredient_id" integer, "recipe_id" integer) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100116064836')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("ingredients")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("ingredients_recipes")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("recipes")[0m
+  [4;36;1mRecipe Load (0.4ms)[0m   [0;1mSELECT * FROM "recipes" LIMIT 1[0m
+  [4;35;1mRecipe Load (0.4ms)[0m   [0mSELECT * FROM "recipes" LIMIT 1[0m
+  [4;36;1mRecipe Load (0.4ms)[0m   [0;1mSELECT * FROM "recipes" LIMIT 1[0m
+
+
+Processing RecipesController#edit (for 127.0.0.1 at 2010-01-15 21:19:27) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mRecipe Load (0.1ms)[0m   [0;1mSELECT * FROM "recipes" WHERE ("recipes"."id" = 1) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Recipe with ID=1):
+  app/controllers/recipes_controller.rb:37:in `edit'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (35.9ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (not_found)
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-01-15 21:19:31) [GET]
+  [4;35;1mRecipe Load (0.4ms)[0m   [0mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+Completed in 7ms (View: 1, DB: 0) | 200 OK [http://localhost/recipes/]
+
+
+Processing RecipesController#new (for 127.0.0.1 at 2010-01-15 21:19:33) [GET]
+Rendering template within layouts/recipes
+Rendering recipes/new
+Completed in 11ms (View: 5, DB: 0) | 200 OK [http://localhost/recipes/new]
+
+
+Processing RecipesController#create (for 127.0.0.1 at 2010-01-15 21:19:49) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"m49LwMDEGZJ0zWYGIG9ojZPbMfc7aGPx2qMfZnZNRZ0=", "recipe"=>{"name"=>"nachos", "instructions"=>"1 buy nachos"}}
+  [4;36;1mRecipe Create (0.7ms)[0m   [0;1mINSERT INTO "recipes" ("name", "created_at", "updated_at", "instructions") VALUES('nachos', '2010-01-16 07:19:49', '2010-01-16 07:19:49', '1 buy nachos')[0m
+Redirected to http://localhost:3001/recipes/1
+Completed in 12ms (DB: 1) | 302 Found [http://localhost/recipes]
+
+
+Processing RecipesController#show (for 127.0.0.1 at 2010-01-15 21:19:49) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mRecipe Load (0.4ms)[0m   [0mSELECT * FROM "recipes" WHERE ("recipes"."id" = 1) [0m
+Rendering template within layouts/recipes
+Rendering recipes/show
+Completed in 10ms (View: 3, DB: 0) | 200 OK [http://localhost/recipes/1]
+  [4;35;1mRecipe Load (0.8ms)[0m   [0mSELECT * FROM "recipes" LIMIT 1[0m
+  [4;36;1mIngredient Load (0.2ms)[0m   [0;1mSELECT * FROM "ingredients" INNER JOIN "ingredients_recipes" ON "ingredients".id = "ingredients_recipes".ingredient_id WHERE ("ingredients_recipes".recipe_id = 1 ) [0m
+  [4;35;1mIngredient Create (1.4ms)[0m   [0mINSERT INTO "ingredients" ("name", "created_at", "updated_at") VALUES('hot sauce', '2010-01-16 07:21:44', '2010-01-16 07:21:44')[0m
+
+
+Processing RecipesController#show (for 127.0.0.1 at 2010-01-15 21:22:02) [GET]
+  Parameters: {"id"=>"index"}
+  [4;36;1mRecipe Load (0.2ms)[0m   [0;1mSELECT * FROM "recipes" WHERE ("recipes"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Recipe with ID=index):
+  app/controllers/recipes_controller.rb:16:in `show'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (33.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing RecipesController#show (for 127.0.0.1 at 2010-01-15 21:22:08) [GET]
+  Parameters: {"id"=>"list"}
+  [4;35;1mRecipe Load (0.2ms)[0m   [0mSELECT * FROM "recipes" WHERE ("recipes"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Recipe with ID=list):
+  app/controllers/recipes_controller.rb:16:in `show'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (33.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing IngredientsController#index (for 127.0.0.1 at 2010-01-15 21:22:15) [GET]
+  [4;36;1mIngredient Load (1.0ms)[0m   [0;1mSELECT * FROM "ingredients" [0m
+Rendering template within layouts/ingredients
+Rendering ingredients/index
+Completed in 105ms (View: 98, DB: 1) | 200 OK [http://localhost/ingredients]
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-01-15 21:22:24) [GET]
+  [4;35;1mRecipe Load (0.7ms)[0m   [0mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+Completed in 13ms (View: 7, DB: 1) | 200 OK [http://localhost/recipes/]
+  [4;36;1mRecipe Load (0.8ms)[0m   [0;1mSELECT * FROM "recipes" LIMIT 1[0m
+  [4;35;1mIngredient Load (0.5ms)[0m   [0mSELECT * FROM "ingredients" INNER JOIN "ingredients_recipes" ON "ingredients".id = "ingredients_recipes".ingredient_id WHERE ("ingredients_recipes".recipe_id = 1 ) [0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mINSERT INTO "ingredients_recipes" ("ingredient_id", "recipe_id") VALUES (4, 1)[0m
+  [4;35;1mRecipe Load (0.9ms)[0m   [0mSELECT * FROM "recipes" INNER JOIN "ingredients_recipes" ON "recipes".id = "ingredients_recipes".recipe_id WHERE ("ingredients_recipes".ingredient_id = 4 ) [0m
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-01-15 21:24:32) [GET]
+  [4;36;1mRecipe Load (0.7ms)[0m   [0;1mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+Completed in 14ms (View: 7, DB: 1) | 200 OK [http://localhost/recipes/]
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-01-15 21:28:00) [GET]
+  [4;35;1mRecipe Load (0.7ms)[0m   [0mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+  [4;36;1mIngredient Load (0.5ms)[0m   [0;1mSELECT * FROM "ingredients" INNER JOIN "ingredients_recipes" ON "ingredients".id = "ingredients_recipes".ingredient_id WHERE ("ingredients_recipes".recipe_id = 1 ) LIMIT 1[0m
+Completed in 24ms (View: 18, DB: 1) | 200 OK [http://localhost/recipes/]
+
+
+Processing IngredientsController#index (for 127.0.0.1 at 2010-01-15 21:28:27) [GET]
+  [4;35;1mIngredient Load (1.0ms)[0m   [0mSELECT * FROM "ingredients" [0m
+Rendering template within layouts/ingredients
+Rendering ingredients/index
+Completed in 24ms (View: 18, DB: 1) | 200 OK [http://localhost/ingredients]
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-01-15 21:29:16) [GET]
+  [4;36;1mRecipe Load (0.7ms)[0m   [0;1mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+  [4;35;1mIngredient Load (0.5ms)[0m   [0mSELECT * FROM "ingredients" INNER JOIN "ingredients_recipes" ON "ingredients".id = "ingredients_recipes".ingredient_id WHERE ("ingredients_recipes".recipe_id = 1 ) LIMIT 1[0m
+Completed in 101ms (View: 95, DB: 1) | 200 OK [http://localhost/recipes/]
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-01-15 21:31:41) [GET]
+  [4;36;1mRecipe Load (0.7ms)[0m   [0;1mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+  [4;35;1mIngredient Load (0.5ms)[0m   [0mSELECT * FROM "ingredients" INNER JOIN "ingredients_recipes" ON "ingredients".id = "ingredients_recipes".ingredient_id WHERE ("ingredients_recipes".recipe_id = 1 ) [0m
+
+ActionView::TemplateError (undefined method `instructions' for #<Ingredient:0x1036071e8>) on line #18 of app/views/recipes/index.html.erb:
+15:     	<%= recipe.name %><br>
+16:     <% } %>
+17:     </td>
+18:     <td><%=h recipe.instructions %></td>
+19:     <td><%= link_to 'Show', recipe %></td>
+20:     <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
+21:     <td><%= link_to 'Destroy', recipe, :confirm => 'Are you sure?', :method => :delete %></td>
+
+    app/views/recipes/index.html.erb:18
+    app/views/recipes/index.html.erb:10:in `each'
+    app/views/recipes/index.html.erb:10
+    app/controllers/recipes_controller.rb:7:in `index'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (44.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-01-15 21:32:01) [GET]
+  [4;36;1mRecipe Load (0.7ms)[0m   [0;1mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+  [4;35;1mIngredient Load (0.5ms)[0m   [0mSELECT * FROM "ingredients" INNER JOIN "ingredients_recipes" ON "ingredients".id = "ingredients_recipes".ingredient_id WHERE ("ingredients_recipes".recipe_id = 1 ) [0m
+Completed in 105ms (View: 98, DB: 1) | 200 OK [http://localhost/recipes/]
+
+
+Processing IngredientsController#index (for 127.0.0.1 at 2010-01-15 21:32:16) [GET]
+  [4;36;1mIngredient Load (1.0ms)[0m   [0;1mSELECT * FROM "ingredients" [0m
+Rendering template within layouts/ingredients
+Rendering ingredients/index
+Completed in 24ms (View: 18, DB: 1) | 200 OK [http://localhost/ingredients]
+  [4;36;1mIngredient Create (0.8ms)[0m   [0;1mINSERT INTO "ingredients" ("name", "created_at", "updated_at") VALUES('cold beer', '2010-01-16 07:34:35', '2010-01-16 07:34:35')[0m
+  [4;35;1mRecipe Load (0.7ms)[0m   [0mSELECT * FROM "recipes" LIMIT 1[0m
+  [4;36;1mRecipe Load (0.8ms)[0m   [0;1mSELECT * FROM "recipes" WHERE ("recipes"."name" = 'nachos') LIMIT 1[0m
+  [4;35;1mRecipe Load (0.8ms)[0m   [0mSELECT * FROM "recipes" WHERE ("recipes"."name" = 'nachos') LIMIT 1[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mINSERT INTO "ingredients_recipes" ("ingredient_id", "recipe_id") VALUES (5, 1)[0m
+  [4;35;1mIngredient Load (0.7ms)[0m   [0mSELECT * FROM "ingredients" INNER JOIN "ingredients_recipes" ON "ingredients".id = "ingredients_recipes".ingredient_id WHERE ("ingredients_recipes".recipe_id = 1 ) [0m
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-01-15 21:38:25) [GET]
+  [4;35;1mRecipe Load (0.7ms)[0m   [0mSELECT * FROM "recipes" [0m
+Rendering template within layouts/recipes
+Rendering recipes/index
+  [4;36;1mIngredient Load (0.6ms)[0m   [0;1mSELECT * FROM "ingredients" INNER JOIN "ingredients_recipes" ON "ingredients".id = "ingredients_recipes".ingredient_id WHERE ("ingredients_recipes".recipe_id = 1 ) [0m
+Completed in 20ms (View: 13, DB: 1) | 200 OK [http://localhost/recipes/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-15 21:41:03) [GET]
+
+NoMethodError (undefined method `active_scaffold' for RecipesController:Class):
+  app/controllers/recipes_controller.rb:2
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (29.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-15 21:41:17) [GET]
+
+NoMethodError (undefined method `active_scaffold' for RecipesController:Class):
+  app/controllers/recipes_controller.rb:2
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (30.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-15 21:41:18) [GET]
+
+NoMethodError (undefined method `active_scaffold' for RecipesController:Class):
+  app/controllers/recipes_controller.rb:2
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (30.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-15 21:41:19) [GET]
+
+NoMethodError (undefined method `active_scaffold' for RecipesController:Class):
+  app/controllers/recipes_controller.rb:2
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (111.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-15 21:41:21) [GET]
+
+NoMethodError (undefined method `active_scaffold' for RecipesController:Class):
+  app/controllers/recipes_controller.rb:2
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (30.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-15 21:41:21) [GET]
+
+NoMethodError (undefined method `active_scaffold' for RecipesController:Class):
+  app/controllers/recipes_controller.rb:2
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (29.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-15 21:41:22) [GET]
+
+NoMethodError (undefined method `active_scaffold' for RecipesController:Class):
+  app/controllers/recipes_controller.rb:2
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (111.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-15 21:41:38) [GET]
+
+NoMethodError (undefined method `active_scaffold' for RecipesController:Class):
+  app/controllers/recipes_controller.rb:2
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (30.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-15 21:41:59) [GET]
+
+MissingSourceFile (no such file to load -- active_scaffold):
+  app/controllers/recipes_controller.rb:1
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (32.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-01-15 21:42:11) [GET]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "recipes" [0m
+  [4;35;1mRecipe Load (0.7ms)[0m   [0mSELECT "recipes".* FROM "recipes" ORDER BY "recipes"."id" ASC LIMIT 15 OFFSET 0[0m
+  [4;36;1mIngredient Load (0.8ms)[0m   [0;1mSELECT "ingredients".*, t0.recipe_id as the_parent_record_id FROM "ingredients" INNER JOIN "ingredients_recipes" t0 ON "ingredients".id = t0.ingredient_id WHERE (t0.recipe_id = 1) [0m
+Rendering template within layouts/recipes
+Rendering list
+Rendered _list_header (4.7ms)
+Rendered _list_column_headings (23.7ms)
+Rendered _messages (0.9ms)
+Rendered _list_actions (5.3ms)
+Rendered _list_record (173.1ms)
+Rendered _list (214.2ms)
+Completed in 370ms (View: 323, DB: 2) | 200 OK [http://localhost/recipes/]
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-01-15 21:43:05) [GET]
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "recipes" [0m
+  [4;36;1mRecipe Load (0.4ms)[0m   [0;1mSELECT "recipes".* FROM "recipes" ORDER BY "recipes"."id" ASC LIMIT 15 OFFSET 0[0m
+  [4;35;1mIngredient Load (0.6ms)[0m   [0mSELECT "ingredients".*, t0.recipe_id as the_parent_record_id FROM "ingredients" INNER JOIN "ingredients_recipes" t0 ON "ingredients".id = t0.ingredient_id WHERE (t0.recipe_id = 1) [0m
+Rendering template within layouts/recipes
+Rendering list
+Rendered _list_header (4.3ms)
+Rendered _list_column_headings (25.9ms)
+Rendered _messages (0.8ms)
+Rendered _list_actions (4.6ms)
+Rendered _list_record (15.7ms)
+Rendered _list (56.7ms)
+Completed in 95ms (View: 87, DB: 1) | 200 OK [http://localhost/recipes/]
+
+
+Processing RecipesController#nested (for 127.0.0.1 at 2010-01-15 21:43:08) [GET]
+  Parameters: {"adapter"=>"_list_inline_adapter", "id"=>"1", "associations"=>"ingredients"}
+  [4;36;1mRecipe Load (0.6ms)[0m   [0;1mSELECT * FROM "recipes" WHERE ("recipes"."id" = 1) [0m
+
+ActionView::TemplateError (undefined method `render_component' for #<ActionView::Base:0x103565668>) on line #39 of vendor/plugins/active_scaffold/frontends/default/views/_nested.html.erb:
+36:           :constraints => @constraints,
+37:           :conditions => association.options[:conditions],
+38:           :label => h(@label),
+39:           :params => {:nested => true, :parent_column => column_name, :parent_model => association.active_record}
+40:         )
+41:       end
+42:     end
+
+    vendor/plugins/active_scaffold/frontends/default/views/_nested.html.erb:39
+    vendor/plugins/active_scaffold/frontends/default/views/_nested.html.erb:11:in `each'
+    vendor/plugins/active_scaffold/frontends/default/views/_nested.html.erb:11
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (133.4ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing IngredientsController#index (for 127.0.0.1 at 2010-01-15 21:43:21) [GET]
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "ingredients" [0m
+  [4;36;1mIngredient Load (0.8ms)[0m   [0;1mSELECT "ingredients".* FROM "ingredients" ORDER BY "ingredients"."id" ASC LIMIT 15 OFFSET 0[0m
+  [4;35;1mRecipe Load (0.7ms)[0m   [0mSELECT "recipes".*, t0.ingredient_id as the_parent_record_id FROM "recipes" INNER JOIN "ingredients_recipes" t0 ON "recipes".id = t0.recipe_id WHERE (t0.ingredient_id IN (1,2,3,4,5)) [0m
+Rendering template within layouts/ingredients
+Rendering list
+Rendered _list_header (4.4ms)
+Rendered _list_column_headings (19.8ms)
+Rendered _messages (0.8ms)
+Rendered _list_actions (5.3ms)
+Rendered _list_record (99.8ms)
+Rendered _list_actions (3.9ms)
+Rendered _list_record (7.8ms)
+Rendered _list_actions (3.9ms)
+Rendered _list_record (7.8ms)
+Rendered _list_actions (3.9ms)
+Rendered _list_record (8.6ms)
+Rendered _list_actions (4.0ms)
+Rendered _list_record (8.1ms)
+Rendered _list (168.7ms)
+Completed in 213ms (View: 204, DB: 2) | 200 OK [http://localhost/ingredients]
+
+
+Processing IngredientsController#nested (for 127.0.0.1 at 2010-01-15 21:43:25) [GET]
+  Parameters: {"adapter"=>"_list_inline_adapter", "id"=>"4", "associations"=>"recipes"}
+  [4;36;1mIngredient Load (0.5ms)[0m   [0;1mSELECT * FROM "ingredients" WHERE ("ingredients"."id" = 4) [0m
+
+ActionView::TemplateError (undefined method `render_component' for #<ActionView::Base:0x1031fdac0>) on line #39 of vendor/plugins/active_scaffold/frontends/default/views/_nested.html.erb:
+36:           :constraints => @constraints,
+37:           :conditions => association.options[:conditions],
+38:           :label => h(@label),
+39:           :params => {:nested => true, :parent_column => column_name, :parent_model => association.active_record}
+40:         )
+41:       end
+42:     end
+
+    vendor/plugins/active_scaffold/frontends/default/views/_nested.html.erb:39
+    vendor/plugins/active_scaffold/frontends/default/views/_nested.html.erb:11:in `each'
+    vendor/plugins/active_scaffold/frontends/default/views/_nested.html.erb:11
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (53.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing IngredientsController#index (for 127.0.0.1 at 2010-01-15 21:43:45) [GET]
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "ingredients" [0m
+  [4;36;1mIngredient Load (0.8ms)[0m   [0;1mSELECT "ingredients".* FROM "ingredients" ORDER BY "ingredients"."id" ASC LIMIT 15 OFFSET 0[0m
+  [4;35;1mRecipe Load (0.7ms)[0m   [0mSELECT "recipes".*, t0.ingredient_id as the_parent_record_id FROM "recipes" INNER JOIN "ingredients_recipes" t0 ON "recipes".id = t0.recipe_id WHERE (t0.ingredient_id IN (1,2,3,4,5)) [0m
+Rendering template within layouts/ingredients
+Rendering list
+Rendered _list_header (4.0ms)
+Rendered _list_column_headings (19.8ms)
+Rendered _messages (0.8ms)
+Rendered _list_actions (5.1ms)
+Rendered _list_record (16.3ms)
+Rendered _list_actions (4.1ms)
+Rendered _list_record (8.1ms)
+Rendered _list_actions (4.0ms)
+Rendered _list_record (7.9ms)
+Rendered _list_actions (4.3ms)
+Rendered _list_record (8.5ms)
+Rendered _list_actions (4.1ms)
+Rendered _list_record (8.2ms)
+Rendered _list (172.5ms)
+Completed in 211ms (View: 202, DB: 2) | 200 OK [http://localhost/ingredients]
+
+
+Processing IngredientsController#edit (for 127.0.0.1 at 2010-01-15 21:43:49) [GET]
+  Parameters: {"adapter"=>"_list_inline_adapter", "id"=>"4"}
+  [4;36;1mIngredient Load (0.5ms)[0m   [0;1mSELECT * FROM "ingredients" WHERE ("ingredients"."id" = 4) [0m
+Rendered _form_attribute (1.9ms)
+  [4;35;1mRecipe Load (0.5ms)[0m   [0mSELECT * FROM "recipes" INNER JOIN "ingredients_recipes" ON "recipes".id = "ingredients_recipes".recipe_id WHERE ("ingredients_recipes".ingredient_id = 4 ) [0m
+Rendered _horizontal_subform_header (1.7ms)
+Rendered _form_attribute (2.1ms)
+Rendered _form_attribute (1.2ms)
+Rendered _horizontal_subform_record (9.0ms)
+Rendered _form_attribute (1.2ms)
+Rendered _form_attribute (1.1ms)
+Rendered _horizontal_subform_record (6.0ms)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "recipes" [0m
+  [4;35;1mRecipe Load (0.4ms)[0m   [0mSELECT * FROM "recipes" [0m
+Rendered _form_association_footer (8.3ms)
+Rendered _horizontal_subform (40.8ms)
+Rendered _form_association (50.9ms)
+Rendered _form (79.6ms)
+Rendered _update_form (92.7ms)
+Rendered _messages (1.0ms)
+Rendered _list_inline_adapter (89.8ms)
+Completed in 202ms (View: 95, DB: 0) | 200 OK [http://localhost/ingredients/4/edit?_method=get&adapter=_list_inline_adapter]
+
+
+Processing IngredientsController#row (for 127.0.0.1 at 2010-01-15 21:43:52) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mIngredient Load (0.5ms)[0m   [0;1mSELECT * FROM "ingredients" WHERE ("ingredients"."id" = 4) [0m
+  [4;35;1mRecipe Load (0.5ms)[0m   [0mSELECT * FROM "recipes" INNER JOIN "ingredients_recipes" ON "recipes".id = "ingredients_recipes".recipe_id WHERE ("ingredients_recipes".ingredient_id = 4 ) [0m
+Rendered _list_actions (5.2ms)
+Rendered _list_record (20.0ms)
+Completed in 34ms (View: 30, DB: 1) | 200 OK [http://localhost/ingredients/row/4?_method=get]
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-01-15 21:43:57) [GET]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "recipes" [0m
+  [4;35;1mRecipe Load (0.4ms)[0m   [0mSELECT "recipes".* FROM "recipes" ORDER BY "recipes"."id" ASC LIMIT 15 OFFSET 0[0m
+  [4;36;1mIngredient Load (0.5ms)[0m   [0;1mSELECT "ingredients".*, t0.recipe_id as the_parent_record_id FROM "ingredients" INNER JOIN "ingredients_recipes" t0 ON "ingredients".id = t0.ingredient_id WHERE (t0.recipe_id = 1) [0m
+Rendering template within layouts/recipes
+Rendering list
+Rendered _list_header (4.1ms)
+Rendered _list_column_headings (107.3ms)
+Rendered _messages (0.8ms)
+Rendered _list_actions (6.1ms)
+Rendered _list_record (18.2ms)
+Rendered _list (141.8ms)
+Completed in 180ms (View: 172, DB: 1) | 200 OK [http://localhost/recipes/]
+
+
+Processing RecipesController#edit (for 127.0.0.1 at 2010-01-15 21:44:00) [GET]
+  Parameters: {"adapter"=>"_list_inline_adapter", "id"=>"1"}
+  [4;35;1mRecipe Load (0.5ms)[0m   [0mSELECT * FROM "recipes" WHERE ("recipes"."id" = 1) [0m
+  [4;36;1mIngredient Load (0.8ms)[0m   [0;1mSELECT * FROM "ingredients" INNER JOIN "ingredients_recipes" ON "ingredients".id = "ingredients_recipes".ingredient_id WHERE ("ingredients_recipes".recipe_id = 1 ) [0m
+Rendered _horizontal_subform_header (1.4ms)
+Rendered _form_attribute (2.4ms)
+Rendered _horizontal_subform_record (10.7ms)
+Rendered _form_attribute (1.2ms)
+Rendered _horizontal_subform_record (3.4ms)
+Rendered _form_attribute (1.2ms)
+Rendered _horizontal_subform_record (3.3ms)
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "ingredients" [0m
+  [4;36;1mIngredient Load (0.8ms)[0m   [0;1mSELECT * FROM "ingredients" [0m
+Rendered _form_association_footer (8.6ms)
+Rendered _horizontal_subform (44.0ms)
+Rendered _form_association (137.8ms)
+Rendered _form_attribute (1.7ms)
+Rendered _form_attribute (0.9ms)
+Rendered _form (160.4ms)
+Rendered _update_form (173.4ms)
+Rendered _messages (0.8ms)
+Rendered _list_inline_adapter (6.9ms)
+Completed in 198ms (View: 11, DB: 0) | 200 OK [http://localhost/recipes/1/edit?_method=get&adapter=_list_inline_adapter]
+
+
+Processing RecipesController#update (for 127.0.0.1 at 2010-01-15 21:44:07) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"m49LwMDEGZJ0zWYGIG9ojZPbMfc7aGPx2qMfZnZNRZ0=", "id"=>"1", "associated_id"=>"", "_"=>"", "record"=>{"name"=>"nachos", "ingredients"=>{"1263627840495"=>{"name"=>""}, "5"=>{"name"=>"cold beer", "id"=>"5"}}, "instructions"=>"1 buy nachos"}}
+  [4;35;1mRecipe Load (0.5ms)[0m   [0mSELECT * FROM "recipes" WHERE ("recipes"."id" = 1) [0m
+  [4;36;1mIngredient Load (0.6ms)[0m   [0;1mSELECT * FROM "ingredients" INNER JOIN "ingredients_recipes" ON "ingredients".id = "ingredients_recipes".ingredient_id WHERE ("ingredients_recipes".recipe_id = 1 ) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mDELETE FROM "ingredients_recipes" WHERE recipe_id = 1 AND ingredient_id IN (4)[0m
+Rendering on_update
+Rendered _messages (0.9ms)
+Completed in 125ms (View: 17, DB: 2) | 200 OK [http://localhost/recipes/1]
+
+
+Processing RecipesController#row (for 127.0.0.1 at 2010-01-15 21:44:07) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mRecipe Load (0.7ms)[0m   [0;1mSELECT * FROM "recipes" WHERE ("recipes"."id" = 1) [0m
+  [4;35;1mIngredient Load (0.6ms)[0m   [0mSELECT * FROM "ingredients" INNER JOIN "ingredients_recipes" ON "ingredients".id = "ingredients_recipes".ingredient_id WHERE ("ingredients_recipes".recipe_id = 1 ) [0m
+Rendered _list_actions (4.7ms)
+Rendered _list_record (21.0ms)
+Completed in 36ms (View: 32, DB: 1) | 200 OK [http://localhost/recipes/row/1?_method=get]
+
+
+Processing RecipesController#edit (for 127.0.0.1 at 2010-01-15 21:44:09) [GET]
+  Parameters: {"adapter"=>"_list_inline_adapter", "id"=>"1"}
+  [4;36;1mRecipe Load (0.5ms)[0m   [0;1mSELECT * FROM "recipes" WHERE ("recipes"."id" = 1) [0m
+  [4;35;1mIngredient Load (0.5ms)[0m   [0mSELECT * FROM "ingredients" INNER JOIN "ingredients_recipes" ON "ingredients".id = "ingredients_recipes".ingredient_id WHERE ("ingredients_recipes".recipe_id = 1 ) [0m
+Rendered _horizontal_subform_header (1.4ms)
+Rendered _form_attribute (2.1ms)
+Rendered _horizontal_subform_record (10.1ms)
+Rendered _form_attribute (1.2ms)
+Rendered _horizontal_subform_record (3.3ms)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "ingredients" [0m
+  [4;35;1mIngredient Load (0.8ms)[0m   [0mSELECT * FROM "ingredients" [0m
+Rendered _form_association_footer (8.2ms)
+Rendered _horizontal_subform (39.2ms)
+Rendered _form_association (49.1ms)
+Rendered _form_attribute (1.7ms)
+Rendered _form_attribute (0.9ms)
+Rendered _form (156.2ms)
+Rendered _update_form (170.1ms)
+Rendered _messages (0.8ms)
+Rendered _list_inline_adapter (6.4ms)
+Completed in 195ms (View: 11, DB: 0) | 200 OK [http://localhost/recipes/1/edit?_method=get&adapter=_list_inline_adapter]
+
+
+Processing RecipesController#update (for 127.0.0.1 at 2010-01-15 21:44:19) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"m49LwMDEGZJ0zWYGIG9ojZPbMfc7aGPx2qMfZnZNRZ0=", "id"=>"1", "associated_id"=>"4", "_"=>"", "record"=>{"name"=>"nachos", "ingredients"=>{"1263627849933"=>{"name"=>""}, "5"=>{"name"=>"cold beer", "id"=>"5"}}, "instructions"=>"1 buy nachos"}}
+  [4;36;1mRecipe Load (0.5ms)[0m   [0;1mSELECT * FROM "recipes" WHERE ("recipes"."id" = 1) [0m
+  [4;35;1mIngredient Load (0.7ms)[0m   [0mSELECT * FROM "ingredients" INNER JOIN "ingredients_recipes" ON "ingredients".id = "ingredients_recipes".ingredient_id WHERE ("ingredients_recipes".recipe_id = 1 ) [0m
+Rendering on_update
+Rendered _messages (0.8ms)
+Completed in 120ms (View: 17, DB: 1) | 200 OK [http://localhost/recipes/1]
+
+
+Processing RecipesController#row (for 127.0.0.1 at 2010-01-15 21:44:19) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mRecipe Load (0.6ms)[0m   [0;1mSELECT * FROM "recipes" WHERE ("recipes"."id" = 1) [0m
+  [4;35;1mIngredient Load (0.5ms)[0m   [0mSELECT * FROM "ingredients" INNER JOIN "ingredients_recipes" ON "ingredients".id = "ingredients_recipes".ingredient_id WHERE ("ingredients_recipes".recipe_id = 1 ) [0m
+Rendered _list_actions (4.7ms)
+Rendered _list_record (19.5ms)
+Completed in 33ms (View: 29, DB: 1) | 200 OK [http://localhost/recipes/row/1?_method=get]
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-01-15 21:44:22) [GET]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "recipes" [0m
+  [4;35;1mRecipe Load (0.4ms)[0m   [0mSELECT "recipes".* FROM "recipes" ORDER BY "recipes"."id" ASC LIMIT 15 OFFSET 0[0m
+  [4;36;1mIngredient Load (0.4ms)[0m   [0;1mSELECT "ingredients".*, t0.recipe_id as the_parent_record_id FROM "ingredients" INNER JOIN "ingredients_recipes" t0 ON "ingredients".id = t0.ingredient_id WHERE (t0.recipe_id = 1) [0m
+Rendering template within layouts/recipes
+Rendering list
+Rendered _list_header (4.1ms)
+Rendered _list_column_headings (24.7ms)
+Rendered _messages (0.8ms)
+Rendered _list_actions (4.6ms)
+Rendered _list_record (15.0ms)
+Rendered _list (55.1ms)
+Completed in 174ms (View: 166, DB: 1) | 200 OK [http://localhost/recipes/]
+
+
+Processing RecipesController#edit (for 127.0.0.1 at 2010-01-15 21:44:25) [GET]
+  Parameters: {"adapter"=>"_list_inline_adapter", "id"=>"1"}
+  [4;35;1mRecipe Load (0.5ms)[0m   [0mSELECT * FROM "recipes" WHERE ("recipes"."id" = 1) [0m
+  [4;36;1mIngredient Load (0.5ms)[0m   [0;1mSELECT * FROM "ingredients" INNER JOIN "ingredients_recipes" ON "ingredients".id = "ingredients_recipes".ingredient_id WHERE ("ingredients_recipes".recipe_id = 1 ) [0m
+Rendered _horizontal_subform_header (1.4ms)
+Rendered _form_attribute (2.2ms)
+Rendered _horizontal_subform_record (9.9ms)
+Rendered _form_attribute (1.4ms)
+Rendered _horizontal_subform_record (3.7ms)
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "ingredients" [0m
+  [4;36;1mIngredient Load (0.8ms)[0m   [0;1mSELECT * FROM "ingredients" [0m
+Rendered _form_association_footer (8.9ms)
+Rendered _horizontal_subform (40.1ms)
+Rendered _form_association (49.8ms)
+Rendered _form_attribute (1.7ms)
+Rendered _form_attribute (0.9ms)
+Rendered _form (73.3ms)
+Rendered _update_form (87.8ms)
+Rendered _messages (0.8ms)
+Rendered _list_inline_adapter (7.7ms)
+Completed in 115ms (View: 12, DB: 0) | 200 OK [http://localhost/recipes/1/edit?_method=get&adapter=_list_inline_adapter]
+
+
+Processing RecipesController#edit_associated (for 127.0.0.1 at 2010-01-15 21:44:34) [GET]
+  Parameters: {"association"=>"ingredients", "id"=>"1", "associated_id"=>"4"}
+  [4;35;1mRecipe Load (0.5ms)[0m   [0mSELECT * FROM "recipes" WHERE ("recipes"."id" = 1) [0m
+  [4;36;1mIngredient Load (0.3ms)[0m   [0;1mSELECT * FROM "ingredients" WHERE ("ingredients"."id" = 4) [0m
+Rendering edit_associated
+Rendered _form_attribute (2.2ms)
+Rendered _horizontal_subform_record (9.7ms)
+Completed in 40ms (View: 35, DB: 1) | 200 OK [http://localhost/recipes/edit_associated/1?associated_id=4&association=ingredients]
+
+
+Processing RecipesController#update (for 127.0.0.1 at 2010-01-15 21:44:37) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"m49LwMDEGZJ0zWYGIG9ojZPbMfc7aGPx2qMfZnZNRZ0=", "id"=>"1", "associated_id"=>"4", "_"=>"", "record"=>{"name"=>"nachos", "ingredients"=>{"1263627865625"=>{"name"=>""}, "4"=>{"name"=>"hot sauce", "id"=>"4"}, "5"=>{"name"=>"cold beer", "id"=>"5"}}, "instructions"=>"1 buy nachos"}}
+  [4;35;1mRecipe Load (0.5ms)[0m   [0mSELECT * FROM "recipes" WHERE ("recipes"."id" = 1) [0m
+  [4;36;1mIngredient Load (0.4ms)[0m   [0;1mSELECT * FROM "ingredients" INNER JOIN "ingredients_recipes" ON "ingredients".id = "ingredients_recipes".ingredient_id WHERE ("ingredients_recipes".recipe_id = 1 ) [0m
+  [4;35;1mIngredient Load (0.3ms)[0m   [0mSELECT * FROM "ingredients" WHERE ("ingredients"."id" = 4) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO "ingredients_recipes" ("ingredient_id", "recipe_id") VALUES (4, 1)[0m
+Rendering on_update
+Rendered _messages (0.8ms)
+Completed in 122ms (View: 97, DB: 2) | 200 OK [http://localhost/recipes/1]
+
+
+Processing RecipesController#row (for 127.0.0.1 at 2010-01-15 21:44:38) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mRecipe Load (0.5ms)[0m   [0mSELECT * FROM "recipes" WHERE ("recipes"."id" = 1) [0m
+  [4;36;1mIngredient Load (0.6ms)[0m   [0;1mSELECT * FROM "ingredients" INNER JOIN "ingredients_recipes" ON "ingredients".id = "ingredients_recipes".ingredient_id WHERE ("ingredients_recipes".recipe_id = 1 ) [0m
+Rendered _list_actions (4.8ms)
+Rendered _list_record (19.5ms)
+Completed in 33ms (View: 29, DB: 1) | 200 OK [http://localhost/recipes/row/1?_method=get]
+
+
+Processing RecipesController#new (for 127.0.0.1 at 2010-01-15 21:45:28) [GET]
+  Parameters: {"adapter"=>"_list_inline_adapter"}
+Rendered _horizontal_subform_header (1.4ms)
+Rendered _form_attribute (2.3ms)
+Rendered _horizontal_subform_record (10.0ms)
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "ingredients" [0m
+  [4;36;1mIngredient Load (0.8ms)[0m   [0;1mSELECT * FROM "ingredients" [0m
+Rendered _form_association_footer (8.6ms)
+Rendered _horizontal_subform (34.9ms)
+Rendered _form_association (42.8ms)
+Rendered _form_attribute (1.7ms)
+Rendered _form_attribute (0.9ms)
+Rendered _form (147.1ms)
+Rendered _create_form (159.9ms)
+Rendered _messages (1.0ms)
+Rendered _list_inline_adapter (6.7ms)
+Completed in 184ms (View: 11, DB: 0) | 200 OK [http://localhost/recipes/new?_method=get&adapter=_list_inline_adapter]
+
+
+Processing RecipesController#nested (for 127.0.0.1 at 2010-01-15 21:45:36) [GET]
+  Parameters: {"adapter"=>"_list_inline_adapter", "id"=>"1", "associations"=>"ingredients"}
+  [4;35;1mRecipe Load (0.5ms)[0m   [0mSELECT * FROM "recipes" WHERE ("recipes"."id" = 1) [0m
+
+ActionView::TemplateError (undefined method `render_component' for #<ActionView::Base:0x10323c928>) on line #39 of vendor/plugins/active_scaffold/frontends/default/views/_nested.html.erb:
+36:           :constraints => @constraints,
+37:           :conditions => association.options[:conditions],
+38:           :label => h(@label),
+39:           :params => {:nested => true, :parent_column => column_name, :parent_model => association.active_record}
+40:         )
+41:       end
+42:     end
+
+    vendor/plugins/active_scaffold/frontends/default/views/_nested.html.erb:39
+    vendor/plugins/active_scaffold/frontends/default/views/_nested.html.erb:11:in `each'
+    vendor/plugins/active_scaffold/frontends/default/views/_nested.html.erb:11
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (52.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RecipesController#index (for 127.0.0.1 at 2010-01-15 21:46:03) [GET]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "recipes" [0m
+  [4;35;1mRecipe Load (0.4ms)[0m   [0mSELECT "recipes".* FROM "recipes" ORDER BY "recipes"."id" ASC LIMIT 15 OFFSET 0[0m
+  [4;36;1mIngredient Load (0.5ms)[0m   [0;1mSELECT "ingredients".*, t0.recipe_id as the_parent_record_id FROM "ingredients" INNER JOIN "ingredients_recipes" t0 ON "ingredients".id = t0.ingredient_id WHERE (t0.recipe_id = 1) [0m
+Rendering template within layouts/recipes
+Rendering list
+Rendered _list_header (4.0ms)
+Rendered _list_column_headings (24.3ms)
+Rendered _messages (0.8ms)
+Rendered _list_actions (4.7ms)
+Rendered _list_record (16.3ms)
+Rendered _list (56.7ms)
+Completed in 180ms (View: 172, DB: 1) | 200 OK [http://localhost/recipes/]
+
+
+Processing RecipesController#nested (for 127.0.0.1 at 2010-01-15 21:46:05) [GET]
+  Parameters: {"adapter"=>"_list_inline_adapter", "id"=>"1", "associations"=>"ingredients"}
+  [4;35;1mRecipe Load (0.5ms)[0m   [0mSELECT * FROM "recipes" WHERE ("recipes"."id" = 1) [0m
+
+ActionView::TemplateError (undefined method `render_component' for #<ActionView::Base:0x1036d0070>) on line #39 of vendor/plugins/active_scaffold/frontends/default/views/_nested.html.erb:
+36:           :constraints => @constraints,
+37:           :conditions => association.options[:conditions],
+38:           :label => h(@label),
+39:           :params => {:nested => true, :parent_column => column_name, :parent_model => association.active_record}
+40:         )
+41:       end
+42:     end
+
+    vendor/plugins/active_scaffold/frontends/default/views/_nested.html.erb:39
+    vendor/plugins/active_scaffold/frontends/default/views/_nested.html.erb:11:in `each'
+    vendor/plugins/active_scaffold/frontends/default/views/_nested.html.erb:11
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (52.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-15 21:51:41) [GET]
+
+ActionController::RoutingError (No route matches "/main/" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-15 21:52:48) [GET]
+
+ActionController::RoutingError (No route matches "/main/index" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-15 21:53:08) [GET]
+
+ActionController::RoutingError (No route matches "/main/index" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-15 21:53:10) [GET]
+
+ActionController::RoutingError (No route matches "/main/index" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-15 21:53:15) [GET]
+
+ActionController::RoutingError (No route matches "/main/" with {:method=>:get}):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MainController#index (for 127.0.0.1 at 2010-01-15 21:54:35) [GET]
+Rendering main/index
+Completed in 24ms (View: 23, DB: 0) | 200 OK [http://localhost/main/]
+
+
+Processing MainController#index (for 127.0.0.1 at 2010-01-15 21:58:56) [GET]
+Rendering main/index
+Completed in 5ms (View: 5, DB: 0) | 200 OK [http://localhost/main/]
+
+
+Processing MainController#index (for 127.0.0.1 at 2010-01-15 21:59:32) [GET]
+Rendering main/index
+Completed in 6ms (View: 6, DB: 0) | 200 OK [http://localhost/main/]
+
+
+Processing MainController#index (for 127.0.0.1 at 2010-01-15 21:59:37) [GET]
+Rendering main/index
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://localhost/main/?]
+
+
+Processing MainController#index (for 127.0.0.1 at 2010-01-15 21:59:47) [GET]
+Rendering main/index
+Completed in 5ms (View: 5, DB: 0) | 200 OK [http://localhost/main/?]
+
+
+Processing MainController#index (for 127.0.0.1 at 2010-01-15 21:59:50) [GET]
+  Parameters: {"ingredients"=>"test"}
+Rendering main/index
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://localhost/main/?ingredients=test]
+
+
+Processing MainController#index (for 127.0.0.1 at 2010-01-15 22:01:27) [GET]
+  Parameters: {"ingredients"=>"test"}
+Rendering main/index
+Completed in 5ms (View: 5, DB: 0) | 200 OK [http://localhost/main/?ingredients=test]
+
+
+Processing MainController#index (for 127.0.0.1 at 2010-01-15 22:01:52) [GET]
+  Parameters: {"ingredients"=>"test"}
+Rendering main/index
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://localhost/main/?ingredients=test]
+
+
+Processing MainController#index (for 127.0.0.1 at 2010-01-15 22:01:54) [GET]
+  Parameters: {"ingredients"=>"test"}
+Rendering main/index
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://localhost/main/?ingredients=test]
+
+
+Processing MainController#index (for 127.0.0.1 at 2010-01-15 22:02:24) [GET]
+  Parameters: {"ingredients"=>"test"}
+Rendering main/index
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://localhost/main/?ingredients=test]
+
+
+Processing MainController#index (for 127.0.0.1 at 2010-01-15 22:02:54) [GET]
+  Parameters: {"ingredients"=>"keys, leftovers, mold"}
+Rendering main/index
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://localhost/main/?ingredients=keys%2C+leftovers%2C+mold]
+
+
+Processing MainController#index (for 127.0.0.1 at 2010-01-15 22:18:54) [GET]
+  Parameters: {"ingredients"=>"keys, leftovers, mold"}
+  [4;36;1mIngredient Load (0.2ms)[0m   [0;1mSELECT * FROM "ingredients" WHERE ("ingredients"."name" = 'keys') LIMIT 1[0m
+  [4;35;1mIngredient Load (0.2ms)[0m   [0mSELECT * FROM "ingredients" WHERE ("ingredients"."name" = ' leftovers') LIMIT 1[0m
+  [4;36;1mIngredient Load (0.2ms)[0m   [0;1mSELECT * FROM "ingredients" WHERE ("ingredients"."name" = ' mold') LIMIT 1[0m
+Rendering main/index
+Completed in 132ms (View: 80, DB: 1) | 200 OK [http://localhost/main/?ingredients=keys%2C+leftovers%2C+mold]
+
+
+Processing MainController#index (for 127.0.0.1 at 2010-01-15 22:19:00) [GET]
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.split):
+  app/controllers/main_controller.rb:4:in `index'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (33.2ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MainController#index (for 127.0.0.1 at 2010-01-15 22:20:07) [GET]
+Rendering main/index
+Completed in 5ms (View: 5, DB: 0) | 200 OK [http://localhost/main/]
+
+
+Processing MainController#index (for 127.0.0.1 at 2010-01-15 22:20:12) [GET]
+  Parameters: {"ingredients"=>"cold beer"}
+  [4;35;1mIngredient Load (0.4ms)[0m   [0mSELECT * FROM "ingredients" WHERE ("ingredients"."name" = 'cold beer') LIMIT 1[0m
+
+NoMethodError (undefined method `add' for []:Array):
+  app/controllers/main_controller.rb:9:in `index'
+  app/controllers/main_controller.rb:7:in `each'
+  app/controllers/main_controller.rb:7:in `index'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (112.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MainController#index (for 127.0.0.1 at 2010-01-15 22:20:27) [GET]
+  Parameters: {"ingredients"=>"cold beer"}
+  [4;36;1mIngredient Load (0.3ms)[0m   [0;1mSELECT * FROM "ingredients" WHERE ("ingredients"."name" = 'cold beer') LIMIT 1[0m
+Rendering main/index
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/main/?ingredients=cold+beer]
+
+
+Processing MainController#index (for 127.0.0.1 at 2010-01-15 22:20:41) [GET]
+  Parameters: {"ingredients"=>"cold beer"}
+  [4;35;1mIngredient Load (0.3ms)[0m   [0mSELECT * FROM "ingredients" WHERE ("ingredients"."name" = 'cold beer') LIMIT 1[0m
+Rendering main/index
+
+ActionView::TemplateError (undefined method `pp' for #<ActionView::Base:0x1035602f8>) on line #2 of app/views/main/index.html.erb:
+1: <% if @ingredient_array %>
+2: 	<%= pp @ingredient_array %>
+3: <% else %>
+4: 	<form>
+5: 		What you got in your fridge? <br>
+
+    app/views/main/index.html.erb:2
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (39.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MainController#index (for 127.0.0.1 at 2010-01-15 22:21:21) [GET]
+  Parameters: {"ingredients"=>"cold beer"}
+  [4;36;1mIngredient Load (0.5ms)[0m   [0;1mSELECT * FROM "ingredients" WHERE ("ingredients"."name" = 'cold beer') LIMIT 1[0m
+Rendering main/index
+Completed in 11ms (View: 5, DB: 1) | 200 OK [http://localhost/main/?ingredients=cold+beer]
+
+
+Processing MainController#index (for 127.0.0.1 at 2010-01-15 22:25:14) [GET]
+  Parameters: {"ingredients"=>"cold beer"}
+  [4;35;1mIngredient Load (0.3ms)[0m   [0mSELECT * FROM "ingredients" WHERE ("ingredients"."name" = 'cold beer') LIMIT 1[0m
+Rendering main/index
+  [4;36;1mRecipe Load (0.5ms)[0m   [0;1mSELECT * FROM "recipes" INNER JOIN "ingredients_recipes" ON "recipes".id = "ingredients_recipes".recipe_id WHERE ("ingredients_recipes".ingredient_id = 5 ) [0m
+Completed in 26ms (View: 20, DB: 1) | 200 OK [http://localhost/main/?ingredients=cold+beer]
+
+
+Processing MainController#index (for 127.0.0.1 at 2010-01-15 22:25:18) [GET]
+  Parameters: {"ingredients"=>"cold beer"}
+  [4;35;1mIngredient Load (0.3ms)[0m   [0mSELECT * FROM "ingredients" WHERE ("ingredients"."name" = 'cold beer') LIMIT 1[0m
+Rendering main/index
+  [4;36;1mRecipe Load (0.5ms)[0m   [0;1mSELECT * FROM "recipes" INNER JOIN "ingredients_recipes" ON "recipes".id = "ingredients_recipes".recipe_id WHERE ("ingredients_recipes".ingredient_id = 5 ) [0m
+Completed in 13ms (View: 7, DB: 1) | 200 OK [http://localhost/main/?ingredients=cold+beer]

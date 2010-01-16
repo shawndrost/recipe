@@ -1,0 +1,15 @@
+<% if @ingredient_array %>
+	<% @ingredient_array.each{|i| %>
+		<%=i.name%> <br>
+		<% i.recipes.each{|r| %>
+			<%=r.name%> <br>
+		<% } %>
+			
+	<% } %>
+<% else %>
+	<form>
+		What you got in your fridge? <br>
+		<input name="ingredients" type="text" />
+		<input type= "submit" />
+	</form>
+<% end %>
